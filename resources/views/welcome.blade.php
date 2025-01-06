@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    </head>
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-        <button onclick="alert('Button clicked!')">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-        </svg>
-        Open
-    </button>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script>
+        function openNewPage() {
+            window.location.href = "new_doc.html";
+        }
+        function toggleUploadForm() {
+            const uploadDiv = document.getElementById("uploadForm");
+            uploadDiv.style.display = uploadDiv.style.display === "none" ? "block" : "none";
+        }
+    </script>
+   <body>
+    <div class="container mt-5">
+        <!-- Button to show the upload form -->
+        <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='new_doc.php?template=default'">Create New Doc</button>
+        <button type="button" class="btn btn-secondary btn-lg" onclick="toggleUploadForm()">Upload Doc</button>
+        <!-- Hidden upload form -->
+        <div id="uploadForm" style="display: none;" class="mt-3">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Upload file</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+            </div>
         </div>
-     </nav>
-    <body>
-        <h1 class="text-center text-bg-warning p-3 text-uppercase fw-light">Wahoo</h1>
-    </body>
-
+    </div>
 </html>
